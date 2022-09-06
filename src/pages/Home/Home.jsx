@@ -1,5 +1,12 @@
 import React from 'react';
+import PageContainer from '@/components/common/PageContainer/PageContainer';
 
-const Home = () => <div>Home</div>;
+const Home = () => {
+  return (
+    <PageContainer>
+      <div>HOME</div>
+    </PageContainer>
+  );
+};
 
 export default Home;
