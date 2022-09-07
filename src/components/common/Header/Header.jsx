@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/constants/route';
-import IMMOVIELOGO from '@/assets/images/logo.png';
+import immovieLogo from '@/assets/images/logo.png';
 import * as Styled from '@/components/common/Header/Header.styled';
 
 const Header = () => {
@@ -9,22 +9,22 @@ const Header = () => {
       <Styled.Wrapper>
         <Styled.Logo>
           <Link to={ROUTES.HOME}>
-            <img src={IMMOVIELOGO} alt="I.M.MOVIE Logo" />
+            <img src={immovieLogo} alt="I.M.MOVIE Logo" />
           </Link>
         </Styled.Logo>
         <nav>
           <Styled.Gnb>
             <li>
-              <Link to={ROUTES.HOME}>현재상영작</Link>
+              <Styled.GnbLink to={ROUTES.SEARCH}>검색</Styled.GnbLink>
             </li>
             <li>
-              <Link to={ROUTES.HOME}>개봉예정작</Link>
+              <Styled.GnbLink to={ROUTES.NOW_PLAYING}>현재상영작</Styled.GnbLink>
             </li>
             <li>
-              <Link to={ROUTES.HOME}>평점순</Link>
+              <Styled.GnbLink to={ROUTES.UPCOMING}>개봉예정작</Styled.GnbLink>
             </li>
             <li>
-              <Link to={ROUTES.HOME}>로그인</Link>
+              <Styled.GnbLink to={ROUTES.TOP_RATED}>평점순</Styled.GnbLink>
             </li>
           </Styled.Gnb>
         </nav>
