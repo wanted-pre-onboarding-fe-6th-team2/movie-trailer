@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ROUTES } from '@/constants/route';
 import immovieLogo from '@/assets/images/logo.png';
 import * as Styled from '@/components/common/Header/Header.styled';
+import SearchInput from '@/components/search/SearchInput/SearchInput';
 
 const Header = () => {
+  const { pathname } = useLocation();
+
   return (
     <Styled.Header>
       <Styled.Wrapper>
@@ -12,6 +15,7 @@ const Header = () => {
             <img src={immovieLogo} alt="I.M.MOVIE Logo" />
           </Link>
         </Styled.Logo>
+        {pathname !== ROUTES.SEARCH && <SearchInput />}
         <nav>
           <Styled.Gnb>
             <li>

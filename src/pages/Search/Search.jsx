@@ -1,10 +1,12 @@
 import React from 'react';
 import Search from '@/components/search/Search/Search';
+import PageContainer from '@/components/common/PageContainer/PageContainer';
 
 const SearchPage = () => (
   <div>
-    SearchPage
-    <Search />
+    <PageContainer>
+      <Search />
+    </PageContainer>
   </div>
 );
 

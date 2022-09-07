@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
+import { COLORS } from '@/constants/colors.js';
 
 const SearchInputSection = styled.section`
   position: relative;
+  width: ${({ isSearchPage }) => (isSearchPage ? '80%' : '40%')};
+  height: ${({ isSearchPage }) => isSearchPage && '10vh'};
+  margin: 0 auto;
 `;
 
 const SearchInputForm = styled.form`
@@ -10,35 +14,32 @@ const SearchInputForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
 `;
 
 const SearchInput = styled.input`
   width: 100%;
-  height: 2em;
+  height: 50%;
 
   box-sizing: border-box;
   border-radius: 0.25em;
   border: none;
   outline: none;
 
-  font-size: 2em;
   padding: 0.5em 1em;
 
-  border: 1px solid #000;
   &:focus {
-    background-color: #eee;
+    border: 1px solid ${COLORS.RED};
   }
 `;
 
 const SearchButton = styled.button`
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
 
   position: absolute;
-  top: 1em;
-  right: 1em;
+  top: ${({ isSearchPage }) => isSearchPage && '1em'};
+  right: 0.25em;
 
   border: none;
   outline: none;

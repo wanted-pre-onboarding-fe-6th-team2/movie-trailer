@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import searchIcon from '@/assets/svg/searchIcon.svg';
 import * as Styled from '@/components/search/SearchInput/SearchInput.styled';
 import searchApiService from '@/api/searchService';
 import SearchPreview from '@/components/search/SearchPreview/SearchPreview';
+import { ROUTES } from '@/constants/route';
 
 const SearchInput = () => {
   const [searchKeyword, setSearchKeyword] = useState('');
-
+  const { pathname } = useLocation();
+  const isOpenPreview = searchKeyword && pathname !== ROUTES.SEARCH;
   const [searchedMovies, setSearchedMovies] = useState([]);
 
   const searchMovieByKeyword = async keyword => {
@@ -43,7 +46,7 @@ const SearchInput = () => {
   };
 
   return (
-    <Styled.SearchInputSection>
+    <Styled.SearchInputSection isSearchPage={pathname === ROUTES.SEARCH}>
       <Styled.SearchInputForm>
         <Styled.SearchInput
           type="text"
@@ -56,7 +59,7 @@ const SearchInput = () => {
           <img src={searchIcon} alt="검색" />
         </Styled.SearchButton>
       </Styled.SearchInputForm>
-      {searchKeyword && <SearchPreview movies={searchedMovies.slice(0, 10)} />}
+      {isOpenPreview && <SearchPreview movies={searchedMovies.slice(0, 10)} />}
     </Styled.SearchInputSection>
   );
 };
