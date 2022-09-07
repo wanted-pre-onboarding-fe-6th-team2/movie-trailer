@@ -4,5 +4,5 @@ export const ROUTES = {
   NOW_PLAYING: '/now-playing',
   SEARCH: '/search',
   TOP_RATED: '/top-rated',
-  UPCOMING: 'upcoming',
+  UPCOMING: '/upcoming',
 };
