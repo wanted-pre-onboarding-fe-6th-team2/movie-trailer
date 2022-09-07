@@ -10,14 +10,13 @@ const MovieOverviewContainer = styled.div`
 const Title = styled.h3`
   font-size: 24px;
   font-weight: 500;
-  padding: 10px 0;
+  padding-left: 10px;
   margin-bottom: 16px;
-  border-bottom: 1px solid black;
 `;
 
 const Content = styled.p`
   font-size: 16px;
-  line-height: 24px;
+  line-height: 32px;
 `;
 
 export { MovieOverviewContainer, Title, Content };

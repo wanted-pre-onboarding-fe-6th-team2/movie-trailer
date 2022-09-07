@@ -1,19 +1,18 @@
 import styled from '@emotion/styled';
 
 const DetailContainer = styled.div`
-  min-height: 100px;
-  border: 1px solid blue;
+  min-height: 150px;
   box-sizing: border-box;
   padding: 30px;
-  margin-bottom: 30px;
+  background-color: #1f1f1f;
 `;
 
 const DetailTitle = styled.h3`
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 500;
-  padding: 10px 0;
+  padding: 10px 0 10px 5px;
   margin-bottom: 16px;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid white;
 `;
 
 export { DetailContainer, DetailTitle };
