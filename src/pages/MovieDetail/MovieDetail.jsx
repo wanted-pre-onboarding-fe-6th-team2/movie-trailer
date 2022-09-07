@@ -28,7 +28,7 @@ const MovieDetail = () => {
   useEffect(() => {
     const getMovieDetail = async () => {
       const movieDetailData = await movieApiService.getMovieDetail({ movieId });
-      const movieVideoData = await movieApiService.getMovieVideo({ movieId });
+      const movieVideoData = await movieApiService.getMovieVideos({ movieId });
 
       setMovieDetail({
         title: movieDetailData.title,
