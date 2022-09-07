@@ -11,19 +11,17 @@ import MovieDetail from '@/pages/MovieDetail/MovieDetail';
 import Search from '@/pages/Search/Search';
 
 const App = () => (
-  <div>
+  <GlobalLayout>
     <Global styles={resetCss} />
-    <GlobalLayout>
-      <Routes>
-        <Route path={ROUTES.HOME} element={<Home />} />
-        <Route path={ROUTES.NOW_PLAYING} element={<NowPlaying />} />
-        <Route path={ROUTES.UPCOMING} element={<Upcoming />} />
-        <Route path={ROUTES.TOP_RATED} element={<TopRated />} />
-        <Route path={ROUTES.MOVIE_DETAIL} element={<MovieDetail />} />
-        <Route path={ROUTES.SEARCH} element={<Search />} />
-      </Routes>
-    </GlobalLayout>
-  </div>
+    <Routes>
+      <Route path={ROUTES.HOME} element={<Home />} />
+      <Route path={ROUTES.NOW_PLAYING} element={<NowPlaying />} />
+      <Route path={ROUTES.UPCOMING} element={<Upcoming />} />
+      <Route path={ROUTES.TOP_RATED} element={<TopRated />} />
+      <Route path={ROUTES.MOVIE_DETAIL} element={<MovieDetail />} />
+      <Route path={ROUTES.SEARCH} element={<Search />} />
+    </Routes>
+  </GlobalLayout>
 );
 
 export default App;
