@@ -6,12 +6,10 @@ const MovieTitle = ({ movieDetail }) => {
 
   return (
     <Styled.TitleContainer>
-      <div>
-        <Styled.MovieName>{title}</Styled.MovieName>
-        <Styled.OriginalMovieName>
-          {originalTitle}, {releaseDate.slice(0, 4)}
-        </Styled.OriginalMovieName>
-      </div>
+      <Styled.MovieName>{title}</Styled.MovieName>
+      <Styled.OriginalMovieName>
+        {originalTitle}, {releaseDate.slice(0, 4)}
+      </Styled.OriginalMovieName>
     </Styled.TitleContainer>
   );
 };
