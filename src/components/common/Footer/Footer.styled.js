@@ -4,6 +4,7 @@ import { COLORS } from '@/constants/colors.js';
 const Footer = styled.footer`
   width: 100%;
   min-width: 1100px;
+  min-height: 80px;
   margin: 0 auto;
   color: ${COLORS.WHITE};
 `;
