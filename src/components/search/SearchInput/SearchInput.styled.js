@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors.js';
 
 const SearchInputSection = styled.section`
   position: relative;
-  width: ${({ isSearchPage }) => (isSearchPage ? '80%' : '40%')};
-  height: ${({ isSearchPage }) => isSearchPage && '10vh'};
+  width: 80%;
+  height: 10vh;
   margin: 0 auto;
 `;
 
@@ -33,13 +34,13 @@ const SearchInput = styled.input`
   }
 `;
 
-const SearchButton = styled.button`
-  width: 2em;
-  height: 2em;
+const SearchButton = styled(Link)`
+  width: 1em;
+  height: 1em;
 
   position: absolute;
-  top: ${({ isSearchPage }) => isSearchPage && '1em'};
-  right: 0.25em;
+  top: 1.75em;
+  right: 1em;
 
   border: none;
   outline: none;
