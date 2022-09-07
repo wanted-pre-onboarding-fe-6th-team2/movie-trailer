@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ScrollToTopBtn, UpperImg } from '@/components/ScrollToTop/ScrollToTop.styled';
+import { ScrollToTopBtn, UpperImg } from '@/components/common/ScrollToTop/ScrollToTop.styled';
 import imgUp from '@/assets/images/ic-up.png';
 
 const ScrollToTop = () => {

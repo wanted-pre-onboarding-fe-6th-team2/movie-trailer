@@ -1,4 +1,4 @@
-import { LoadingContainer, LoadingSpinner } from '@/components/Loading/Loading.styled';
+import { LoadingContainer, LoadingSpinner } from '@/components/common/Loading/Loading.styled';
 
 const Loading = () => {
   return (
