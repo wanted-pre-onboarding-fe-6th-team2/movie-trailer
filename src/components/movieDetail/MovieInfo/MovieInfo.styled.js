@@ -2,22 +2,26 @@ import styled from '@emotion/styled';
 
 const MovieInfoContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  flex: 1;
-  margin: 30px 0;
-  padding-top: 20px;
+  padding: 30px;
+  background-color: #1f1f1f;
+  box-sizing: border-box;
 `;
 
 const MovieInfoBox = styled.div`
-  flex: 2;
+  margin: auto 0;
+  flex: 1;
   padding: 30px;
 `;
 
+const MovieTitle = styled.h2`
+  font-size: 32px;
+  font-weight: 600;
+`;
+
 const MovieInfoList = styled.li`
+  line-height: 52px;
   list-style: none;
-  line-height: 48px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #4d4c4c;
 `;
 
 const ListTitle = styled.span`
@@ -32,7 +36,7 @@ const StarIcon = styled.img`
   width: 18px;
   height: 18px;
   vertical-align: middle;
-  margin-right: 10px;
+  margin: 0 10px 5px 0;
 `;
 
 const StarRateBox = styled.div`
@@ -40,17 +44,13 @@ const StarRateBox = styled.div`
   align-items: center;
 `;
 
-const MovieVoteText = styled.span`
-  color: black;
-`;
-
 export {
   MovieInfoContainer,
   MovieInfoBox,
+  MovieTitle,
   MovieInfoList,
   ListTitle,
   ListContent,
   StarRateBox,
   StarIcon,
-  MovieVoteText,
 };
