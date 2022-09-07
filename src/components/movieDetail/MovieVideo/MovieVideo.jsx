@@ -5,7 +5,7 @@ import * as Styled from '@/components/movieDetail/MovieVideo/MovieVideo.styled';
 
 const videoOptions = {
   height: '400',
-  width: '1100',
+  width: '1050',
   playerVars: {
     autoplay: 1,
     controls: 0,
