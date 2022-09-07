@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { COLORS } from '@/constants/colors.js';
 
 const resetCss = css`
   html,
@@ -105,6 +106,8 @@ const resetCss = css`
   }
   body {
     line-height: 1;
+    background-color: ${COLORS.BLACK};
+    color: ${COLORS.WHITE};
   }
   ol,
   ul {
@@ -124,6 +127,9 @@ const resetCss = css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  a {
+    text-decoration: none;
   }
 `;
 
