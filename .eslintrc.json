@@ -5,6 +5,7 @@
     "ecmaVersion": "latest"
   },
   "rules": {
+    "react/prop-types": "off",
     "prefer-arrow/prefer-arrow-functions": [
       "error",
       {
