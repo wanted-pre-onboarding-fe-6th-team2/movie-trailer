@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import searchIcon from '@/assets/svg/searchIcon.svg';
-
 import * as Styled from '@/components/search/SearchInput/SearchInput.styled';
 
 const SearchInput = () => {
@@ -28,7 +27,7 @@ const SearchInput = () => {
         onChange={handleSearchKeywordInputChange}
       />
       <Styled.SearchButton type="submit" onClick={handleSearchBtnClick}>
-        <img src={searchIcon} alt="검색 버튼" />
+        <img src={searchIcon} alt="검색" />
       </Styled.SearchButton>
     </Styled.SearchInputForm>
   );

@@ -34,7 +34,7 @@ const SearchButton = styled.button`
 
   position: absolute;
   top: 1em;
-  right: 1.5em;
+  right: 1em;
 
   border: none;
   outline: none;
