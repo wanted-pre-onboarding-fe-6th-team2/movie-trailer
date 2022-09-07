@@ -13,6 +13,12 @@ class MovieApiService extends BaseApiService {
       .then(BaseApiService.handleResponse)
       .catch(BaseApiService.handleError);
 
+  getMovieVideos = ({ movieId, language = 'en' } = {}) =>
+    this.http
+      .get(`/${movieId}/videos?language=${language}`)
+      .then(BaseApiService.handleResponse)
+      .catch(BaseApiService.handleError);
+
   getPopularMovies = ({ language = DEFAULT_LANGUAGE, page = 1 } = {}) =>
     this.http
       .get(`/popular?page=${page}&language=${language}`)

@@ -27,9 +27,13 @@ const SnsList = styled.ul`
     align-items: center;
   }
   img {
-    width: 30px;
+    width: 20px;
     margin: 0 10px;
   }
 `;
 
-export { Footer, Wrapper, SnsList };
+const CopyrightText = styled.div`
+  font-size: 11px;
+`;
+
+export { Footer, Wrapper, SnsList, CopyrightText };

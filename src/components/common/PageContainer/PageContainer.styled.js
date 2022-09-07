@@ -7,7 +7,7 @@ const GlobalContainer = styled.div`
 `;
 
 const Main = styled.main`
-  width: 1100px;
+  width: 1050px;
   margin: 0 auto;
   box-sizing: border-box;
   flex-grow: 1;

@@ -24,7 +24,9 @@ const Footer = () => {
             </a>
           </li>
         </Styled.SnsList>
-        <div>Copyright@원티드 프리 온보딩 2조. All rights reserved</div>
+        <Styled.CopyrightText>
+          Copyright@원티드 프리 온보딩 2조. All rights reserved
+        </Styled.CopyrightText>
       </Styled.Wrapper>
     </Styled.Footer>
   );
