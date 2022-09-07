@@ -22,6 +22,7 @@ const MovieVideo = ({ movieDetail }) => {
   return (
     <Styled.MovieVideoBox>
       <YouTube videoId={youtubeApiKey} opts={videoOptions} />
+      <Styled.TagLine>{movieDetail.tagline}</Styled.TagLine>
     </Styled.MovieVideoBox>
   );
 };
