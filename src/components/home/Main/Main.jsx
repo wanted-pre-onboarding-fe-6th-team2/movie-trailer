@@ -12,7 +12,6 @@ const Main = () => {
   return (
     <Styled.Container>
       <Styled.Wrapper>
-        {/* {console.log(popularMovies)} */}
         <Styled.TitleWrapper>
           <Styled.Title>🌟지금 나에게 필요한 인기 영화는🌟</Styled.Title>
         </Styled.TitleWrapper>
