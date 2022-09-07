@@ -16,7 +16,7 @@ const ProductionCompany = ({ movieDetail }) => {
               src={`${VITE_IMAGE_BASE_URL}/${productionCompany.logo_path}`}
               alt="production-company-logo"
             />
-            <div>{productionCompany.name}</div>
+            <Styled.ProductionCompanyName>{productionCompany.name}</Styled.ProductionCompanyName>
           </Styled.ProductionCompanyItem>
         ))}
       </Styled.ProductionCompanyBox>
