@@ -1,18 +1,18 @@
 import React from 'react';
-import useTopRatedMovies from '@/hooks/api/useNowPlayingMovies';
+import useTopRatedMovies from '@/hooks/api/useTopRatedMovies';
 import * as Styled from '@/pages/NowPlaying/NowPlaying.styled';
 import MovieListItem from '@/components/MovieListItem/MovieListItem';
 import PageContainer from '@/components/common/PageContainer/PageContainer';
 
 const TopRated = () => {
-  const data = useTopRatedMovies({ page: 1 });
+  const getMovieLists = useTopRatedMovies({ page: 10 });
 
   return (
     <PageContainer>
       <Styled.MoviePage>
         <Styled.SubTitle>평점순</Styled.SubTitle>
         <Styled.MovieList>
-          {data.movies?.results.map(list => (
+          {getMovieLists.movies?.results.map(list => (
             <MovieListItem
               key={list.id}
               id={list.id}

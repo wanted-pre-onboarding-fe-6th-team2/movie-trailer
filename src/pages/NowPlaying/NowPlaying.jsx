@@ -5,14 +5,14 @@ import MovieListItem from '@/components/MovieListItem/MovieListItem';
 import PageContainer from '@/components/common/PageContainer/PageContainer';
 
 const NowPlaying = () => {
-  const data = useNowPlayingMovies({ page: 1 });
+  const getMovieLists = useNowPlayingMovies({ page: 1 });
 
   return (
     <PageContainer>
       <Styled.MoviePage>
         <Styled.SubTitle>현재 상영작</Styled.SubTitle>
         <Styled.MovieList>
-          {data.movies?.results.map(list => (
+          {getMovieLists.movies?.results.map(list => (
             <MovieListItem
               key={list.id}
               id={list.id}

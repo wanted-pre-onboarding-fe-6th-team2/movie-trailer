@@ -1,18 +1,18 @@
 import React from 'react';
-import useUpcomingMovies from '@/hooks/api/useNowPlayingMovies';
+import useUpcomingMovies from '@/hooks/api/useUpcomingMovies';
 import * as Styled from '@/pages/NowPlaying/NowPlaying.styled';
 import MovieListItem from '@/components/MovieListItem/MovieListItem';
 import PageContainer from '@/components/common/PageContainer/PageContainer';
 
 const Upcoming = () => {
-  const data = useUpcomingMovies({ page: 1 });
+  const movieLists = useUpcomingMovies({ page: 1 });
 
   return (
     <PageContainer>
       <Styled.MoviePage>
         <Styled.SubTitle>개봉예정작</Styled.SubTitle>
         <Styled.MovieList>
-          {data.movies?.results.map(list => (
+          {movieLists.movies?.results.map(list => (
             <MovieListItem
               key={list.id}
               id={list.id}
