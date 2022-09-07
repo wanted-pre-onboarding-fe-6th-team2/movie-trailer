@@ -2,10 +2,10 @@ import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 const spinner = keyframes`
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 `;
@@ -17,7 +17,6 @@ const LoadingContainer = styled.div`
   top: 0;
   left: 0;
   background: #ffffffb7;
-  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
