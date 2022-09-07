@@ -7,11 +7,9 @@ const MoviePoster = ({ movieDetail }) => {
   const posterUrl = `${VITE_IMAGE_BASE_URL}/${movieDetail.posterPath}`;
 
   return (
-    <Styled.Container>
-      <Styled.MoviePosterBox>
-        <Styled.MoviePosterImage src={posterUrl} alt="movie-poster" />
-      </Styled.MoviePosterBox>
-    </Styled.Container>
+    <Styled.MoviePosterBox>
+      <Styled.MoviePosterImage src={posterUrl} alt="movie-poster" />
+    </Styled.MoviePosterBox>
   );
 };
 
