@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 
+const SearchInputSection = styled.section`
+  position: relative;
+`;
+
 const SearchInputForm = styled.form`
   width: 100%;
   height: 100%;
@@ -15,7 +19,7 @@ const SearchInput = styled.input`
   height: 2em;
 
   box-sizing: border-box;
-  border-radius: 1em;
+  border-radius: 0.25em;
   border: none;
   outline: none;
 
@@ -41,4 +45,4 @@ const SearchButton = styled.button`
   background-color: transparent;
 `;
 
-export { SearchInputForm, SearchInput, SearchButton };
+export { SearchInputSection, SearchInputForm, SearchInput, SearchButton };

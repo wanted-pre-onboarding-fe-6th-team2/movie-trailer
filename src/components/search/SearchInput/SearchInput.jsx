@@ -43,7 +43,7 @@ const SearchInput = () => {
   };
 
   return (
-    <>
+    <Styled.SearchInputSection>
       <Styled.SearchInputForm>
         <Styled.SearchInput
           type="text"
@@ -57,7 +57,7 @@ const SearchInput = () => {
         </Styled.SearchButton>
       </Styled.SearchInputForm>
       {searchKeyword && <SearchPreview movies={searchedMovies.slice(0, 10)} />}
-    </>
+    </Styled.SearchInputSection>
   );
 };
 
