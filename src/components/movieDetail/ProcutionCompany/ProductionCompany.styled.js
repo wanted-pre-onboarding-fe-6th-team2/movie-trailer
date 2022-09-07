@@ -10,6 +10,7 @@ const ProductionCompanyBox = styled.div`
 
 const ProductionCompanyItem = styled.div`
   width: 130px;
+  height: 130px;
   margin: 10px;
   padding: 18px;
   background-color: white;

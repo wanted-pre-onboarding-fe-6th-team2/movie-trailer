@@ -19,7 +19,7 @@ const MovieTitle = styled.h2`
 `;
 
 const MovieInfoList = styled.li`
-  line-height: 52px;
+  line-height: 42px;
   list-style: none;
   border-bottom: 1px solid #4d4c4c;
 `;
