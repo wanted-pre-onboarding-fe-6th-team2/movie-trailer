@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import * as Styled from '@/pages/MovieDetail/MovieDetail.styled';
-import MovieTitle from '@/components/movieDetail/MovieTitle/MovieTitle';
 import MovieInfo from '@/components/movieDetail/MovieInfo/MovieInfo';
 import MovieOverview from '@/components/movieDetail/MovieOverview/MovieOverview';
 import ProductionCompany from '@/components/movieDetail/ProcutionCompany/ProductionCompany';
 import movieApiService from '@/api/movieService';
 import MovieVideo from '@/components/movieDetail/MovieVideo/MovieVideo';
+import PageContainer from '@/components/common/PageContainer/PageContainer';
 
 const MovieDetail = () => {
   const { movieId } = useParams();
@@ -51,13 +50,12 @@ const MovieDetail = () => {
   }, [movieId]);
 
   return (
-    <Styled.MovieDetailContainer>
+    <PageContainer>
       <MovieVideo movieDetail={movieDetail} />
-      <MovieTitle movieDetail={movieDetail} />
       <MovieInfo movieDetail={movieDetail} />
       <MovieOverview movieDetail={movieDetail} />
       <ProductionCompany movieDetail={movieDetail} />
-    </Styled.MovieDetailContainer>
+    </PageContainer>
   );
 };
 
