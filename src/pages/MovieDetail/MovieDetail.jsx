@@ -7,23 +7,25 @@ import movieApiService from '@/api/movieService';
 import MovieVideo from '@/components/movieDetail/MovieVideo/MovieVideo';
 import PageContainer from '@/components/common/PageContainer/PageContainer';
 
+const initailMovieDetail = {
+  title: '',
+  originalTitle: '',
+  releaseDate: '',
+  posterPath: '',
+  overview: '',
+  runtime: 0,
+  voteAverage: 0,
+  voteCount: 0,
+  genres: [],
+  productionCountries: [],
+  productionCompanies: [],
+  video: [],
+  tagline: '',
+};
+
 const MovieDetail = () => {
   const { movieId } = useParams();
-  const [movieDetail, setMovieDetail] = useState({
-    title: '',
-    originalTitle: '',
-    releaseDate: '',
-    posterPath: '',
-    overview: '',
-    runtime: 0,
-    voteAverage: 0,
-    voteCount: 0,
-    genres: [],
-    productionCountries: [],
-    productionCompanies: [],
-    video: [],
-    tagline: '',
-  });
+  const [movieDetail, setMovieDetail] = useState(initailMovieDetail);
 
   useEffect(() => {
     const getMovieDetail = async () => {
@@ -43,7 +45,7 @@ const MovieDetail = () => {
         genres: movieDetailData.genres,
         productionCompanies: movieDetailData.production_companies,
         productionCountries: movieDetailData.production_countries,
-        video: movieVideoData.results[0],
+        video: movieVideoData?.results[0],
       });
     };
     getMovieDetail();
