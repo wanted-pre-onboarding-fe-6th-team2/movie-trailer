@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import searchIcon from '@/assets/svg/searchIcon.svg';
 import * as Styled from '@/components/search/SearchInput/SearchInput.styled';
 import searchApiService from '@/api/searchService';
-import SearchPreview from '@/components/search/SearchPreview/SearchPreview';
+import SearchPreview from '@/components/search/SearchRecommendation/SearchRecommendation';
 import { ROUTES } from '@/constants/route';
 
 const SearchInput = () => {
