@@ -3,8 +3,9 @@ import { COLORS } from '@/constants/colors.js';
 
 const MovieItem = styled.div`
   padding: 0 10px 30px;
-  width: 25%;
+  width: 50%;
   box-sizing: border-box;
+  max-width: 500px;
 `;
 
 const ImageWrapper = styled.div`
@@ -13,6 +14,10 @@ const ImageWrapper = styled.div`
   overflow: hidden;
   &:hover div {
     opacity: 1;
+  }
+  img {
+    max-width: 100%;
+    width: 100%;
   }
 `;
 

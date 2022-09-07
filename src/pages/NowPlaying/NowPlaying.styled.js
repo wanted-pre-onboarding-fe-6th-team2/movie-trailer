@@ -20,6 +20,7 @@ const MovieList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 40px;
+  justify-content: space-between;
 `;
 
 export { MoviePage, MovieList, SubTitle };
