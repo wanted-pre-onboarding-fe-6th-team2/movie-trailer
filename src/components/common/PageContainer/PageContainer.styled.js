@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 const GlobalContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  min-height: 100vh;
 `;
 
 const Main = styled.main`
