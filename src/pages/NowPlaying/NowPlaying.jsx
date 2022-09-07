@@ -1,25 +1,18 @@
 import React from 'react';
-import useSWR from 'swr';
-import MovieApiService from '@/api/movieService';
+import useNowPlayingMovies from '@/hooks/api/useNowPlayingMovies';
 import * as Styled from '@/pages/NowPlaying/NowPlaying.styled';
 import MovieListItem from '@/components/MovieListItem/MovieListItem';
 import PageContainer from '@/components/common/PageContainer/PageContainer';
 
 const NowPlaying = () => {
-  const { data, error } = useSWR({ page: 1 }, MovieApiService.getNowPlayingMovies);
-
-  if (error) {
-    console.log('에러 발생');
-  } else if (!data) {
-    console.log('로딩중입니다.');
-  }
+  const data = useNowPlayingMovies({ page: 1 });
 
   return (
     <PageContainer>
       <Styled.MoviePage>
         <Styled.SubTitle>현재 상영작</Styled.SubTitle>
         <Styled.MovieList>
-          {data?.results.map(list => (
+          {data.movies?.results.map(list => (
             <MovieListItem
               key={list.id}
               id={list.id}
