@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as Styeld from '@/components/movieDetail/MovieOverview/MovieOverview.styled';
 import DetailContainer from '@/components/movieDetail/DetailContainer/DetailContainer';
 

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as Styled from '@/components/movieDetail/MovieInfo/MovieInfo.styled';
 import { star } from '@/assets/icon';
 import MoviePoster from '../MoviePoster/MoviePoster';

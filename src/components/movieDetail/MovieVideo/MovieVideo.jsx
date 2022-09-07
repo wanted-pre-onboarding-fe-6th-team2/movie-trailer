@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import YouTube from 'react-youtube';
 import * as Styled from '@/components/movieDetail/MovieVideo/MovieVideo.styled';

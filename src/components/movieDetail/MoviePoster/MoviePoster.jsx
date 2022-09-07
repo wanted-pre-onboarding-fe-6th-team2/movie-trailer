@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as Styled from '@/components/movieDetail/MoviePoster/MoviePoster.styled';
 
 const { VITE_IMAGE_BASE_URL } = import.meta.env;

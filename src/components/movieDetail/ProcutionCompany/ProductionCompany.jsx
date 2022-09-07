@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as Styled from '@/components/movieDetail/ProcutionCompany/ProductionCompany.styled';
 import DetailContainer from '../DetailContainer/DetailContainer';
 

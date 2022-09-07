@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as Styled from '@/components/movieDetail/MovieTitle/MovieTitle.styled';
 
 const MovieTitle = ({ movieDetail }) => {
