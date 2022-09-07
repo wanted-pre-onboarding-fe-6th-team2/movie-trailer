@@ -5,11 +5,11 @@ import Header from '@/components/common/Header/Header';
 // eslint-disable-next-line react/prop-types
 const PageContainer = ({ children }) => {
   return (
-    <>
+    <Styled.GlobalContainer>
       <Header />
       <Styled.Main>{children}</Styled.Main>
       <Footer />
-    </>
+    </Styled.GlobalContainer>
   );
 };
 
