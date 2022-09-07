@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import FACEBOOKLOGO from '@/assets/images/facebook.png';
-import INSTAGRAMLOGO from '@/assets/images/instagram.png';
-import TWITTERLOGO from '@/assets/images/twitter.png';
+import facebookLogo from '@/assets/images/facebook.png';
+import instagramLogo from '@/assets/images/instagram.png';
+import twitterLogo from '@/assets/images/twitter.png';
 import * as Styled from '@/components/common/Footer/Footer.styled';
 
 const Footer = () => {
@@ -11,21 +11,21 @@ const Footer = () => {
         <Styled.SnsList>
           <li>
             <Link to="https://www.facebook.com/">
-              <img src={FACEBOOKLOGO} alt="Facebook logo" />
+              <img src={facebookLogo} alt="Facebook logo" />
             </Link>
           </li>
           <li>
             <Link to="https://www.instagram.com/">
-              <img src={INSTAGRAMLOGO} alt="Instagram logo" />
+              <img src={instagramLogo} alt="Instagram logo" />
             </Link>
           </li>
           <li>
             <Link to="https://www.twitter.com/">
-              <img src={TWITTERLOGO} alt="Twitter logo" />
+              <img src={twitterLogo} alt="Twitter logo" />
             </Link>
           </li>
         </Styled.SnsList>
-        <div>Copyright@2조. All rights reserved</div>
+        <div>Copyright@원티드 프리 온보딩 2조. All rights reserved</div>
       </Styled.Wrapper>
     </Styled.Footer>
   );
