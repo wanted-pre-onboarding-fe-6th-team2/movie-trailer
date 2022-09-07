@@ -1,33 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import * as Styled from '@/components/home/Main/Main.styled';
-import movieApiService from '@/api/movieService';
 import Card from '@/components/home/Card/Card';
+import usePopularMovies from '@/hooks/api/usePopularMovies';
 
 const Main = () => {
-  const [popularMovies, setPopularMovies] = useState();
+  const { movies, isLoading, isError } = usePopularMovies();
 
-  useEffect(() => {
-    movieApiService.getPopularMovies().then(response => setPopularMovies(response.results));
-  }, []);
-
-  // console.log(popularMovies);
-
-  if (popularMovies === undefined) return <div />;
-
+  if (isLoading) return <div>isLoading...</div>;
+  if (isError) return <div>isError...</div>;
+  const popularMovies = movies.results;
   return (
     <Styled.Container>
       <Styled.Wrapper>
+        {/* {console.log(popularMovies)} */}
         <Styled.TitleWrapper>
           <Styled.Title>🌟지금 나에게 필요한 인기 영화는🌟</Styled.Title>
         </Styled.TitleWrapper>
         <Styled.CardWrapper>
-          {popularMovies === undefined ? (
-            <div />
-          ) : (
-            popularMovies.map((movies, idx) => {
-              return <Card popularMovies={movies} key={idx} />;
-            })
-          )}
+          {popularMovies.map((movieInfo, idx) => {
+            return <Card popularMovies={movieInfo} key={idx} />;
+          })}
         </Styled.CardWrapper>
       </Styled.Wrapper>
     </Styled.Container>
