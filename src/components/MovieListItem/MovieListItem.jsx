@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import * as Styled from '@/components/MovieListItem/MovieListItem.styled';
 import { ROUTES } from '@/constants/route';
 import noImage from '@/assets/images/no-image.jpg';
-import { IMAGE_URL } from '@/constants/imageUrl';
 
+const { VITE_IMAGE_BASE_URL } = import.meta.env;
 const MovieListItem = ({ id, imagePath, overview, title, voteAverage, releaseDate }) => {
   const OverviewFormat = () => {
     if (overview.length > 70) return `${overview.substr(0, 70)}...`;
@@ -14,7 +14,7 @@ const MovieListItem = ({ id, imagePath, overview, title, voteAverage, releaseDat
     <Styled.MovieItem key={id}>
       <Link to={ROUTES.MOVIE_DETAIL}>
         <Styled.ImageWrapper>
-          <img src={imagePath === null ? noImage : IMAGE_URL + imagePath} alt={title} />
+          <img src={imagePath === null ? noImage : VITE_IMAGE_BASE_URL + imagePath} alt={title} />
 
           <Styled.Desc>
             <OverviewFormat />
