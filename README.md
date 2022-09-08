@@ -77,153 +77,46 @@ yarn dev
 > ## 폴더 구조
 
 ```
-│  App.jsx
-│  main.jsx
-│
 ├─api
-│      core.js
-│      movieService.js
-│      searchService.js
-│
 ├─assets
-│  │  react.svg
-│  │
 │  ├─icon
-│  │      index.js
-│  │      star.png
-│  │
 │  ├─images
-│  │      facebook.png
-│  │      ic-up.png
-│  │      instagram.png
-│  │      logo.png
-│  │      no-image.jpg
-│  │      twitter.png
-│  │
 │  └─svg
-│          searchIcon.svg
-│
 ├─components
 │  ├─common
 │  │  ├─Button
-│  │  │      CarouselButton.jsx
-│  │  │      CarouselButton.styled.js
-│  │  │
 │  │  ├─Footer
-│  │  │      Footer.jsx
-│  │  │      Footer.styled.js
-│  │  │
 │  │  ├─GlobalLayout
-│  │  │      GlobalLayout.jsx
-│  │  │      GlobalLayout.styled.js
-│  │  │
 │  │  ├─Header
-│  │  │      Header.jsx
-│  │  │      Header.styled.js
-│  │  │
 │  │  ├─Loading
-│  │  │      Loading.jsx
-│  │  │      Loading.styled.js
-│  │  │
 │  │  └─ScrollToTop
-│  │          ScrollToTop.jsx
-│  │          ScrollToTop.styled.js
-│  │
 │  ├─home
 │  │  ├─Card
-│  │  │      Card.jsx
-│  │  │      Card.styled.js
-│  │  │
 │  │  └─Main
-│  │          Main.jsx
-│  │          Main.styled.js
-│  │
 │  ├─movieDetail
 │  │  ├─DetailContainer
-│  │  │      DetailContainer.jsx
-│  │  │      DetailContainer.styled.js
-│  │  │
 │  │  ├─MovieInfo
-│  │  │      MovieInfo.jsx
-│  │  │      MovieInfo.styled.js
-│  │  │
 │  │  ├─MovieOverview
-│  │  │      MovieOverview.jsx
-│  │  │      MovieOverview.styled.js
-│  │  │
 │  │  ├─MoviePoster
-│  │  │      MoviePoster.jsx
-│  │  │      MoviePoster.styled.js
-│  │  │
 │  │  ├─MovieTitle
-│  │  │      MovieTitle.jsx
-│  │  │      MovieTitle.styled.js
-│  │  │
 │  │  ├─MovieVideo
-│  │  │      MovieVideo.jsx
-│  │  │      MovieVideo.styled.js
-│  │  │
 │  │  └─ProcutionCompany
-│  │          ProductionCompany.jsx
-│  │          ProductionCompany.styled.js
-│  │
 │  ├─MovieListItem
-│  │      MovieListItem.jsx
-│  │      MovieListItem.styled.js
-│  │
 │  └─search
 │      ├─SearchInput
-│      │      SearchInput.jsx
-│      │      SearchInput.styled.js
-│      │
 │      └─SearchItem
-│              SearchItem.jsx
-│              SearchItem.styled.js
-│
 ├─constants
-│      colors.js
-│      route.js
-│      swr.js
-│
 ├─hooks
-│  │  useInfiniteScroll.js
-│  │
 │  └─api
-│          useMovieDetail.js
-│          useMovieSearch.js
-│          useMovieVideos.js
-│          useNowPlayingMovies.js
-│          usePopularMovies.js
-│          useTopRatedMovies.js
-│          useUpcomingMovies.js
-│
 ├─pages
 │  ├─Home
-│  │      Home.jsx
-│  │
 │  ├─MovieDetail
-│  │      MovieDetail.jsx
-│  │
 │  ├─NowPlaying
-│  │      NowPlaying.jsx
-│  │      NowPlaying.styled.js
-│  │
 │  ├─Search
-│  │      Search.jsx
-│  │
 │  ├─TopRated
-│  │      TopRated.jsx
-│  │      TopRated.styled.js
-│  │
 │  └─Upcoming
-│          Upcoming.jsx
-│          Upcoming.styled.js
-│
 ├─styles
-│      reset.js
-│
 └─utils
-        swr.js
 ```
 
 > ## 과제 요구사항 및 해결 방법
@@ -277,6 +170,9 @@ yarn dev
 - [x] 포스터 없는 경우, 대체 이미지 사용
 
 **해결방법**
+
+- 제목 기준으로 검색할 수 있도록 api를 활용해 최대 20개씩 검색된 데이터를 노출했습니다.
+- 이미지가 존재하지 않는 경우 대체 이미지가 사용되도록 구현했습니다.
 
 > ## 기술 스택
 
