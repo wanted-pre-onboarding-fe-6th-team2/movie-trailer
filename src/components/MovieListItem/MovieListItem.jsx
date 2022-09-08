@@ -12,7 +12,7 @@ const MovieListItem = ({ id, imagePath, overview, title, voteAverage, releaseDat
   };
   return (
     <Styled.MovieItem key={id}>
-      <Link to={ROUTES.MOVIE_DETAIL}>
+      <Link to={`${ROUTES.MOVIE_DETAIL}/${id}`}>
         <Styled.ImageWrapper>
           <img src={imagePath === null ? noImage : VITE_IMAGE_BASE_URL + imagePath} alt={title} />
 
