@@ -13,8 +13,9 @@ export const useInfiniteScroll = (onIntersect, options) => {
   );
 
   useEffect(() => {
+    if (!ref.current) return undefined;
     const observer = new IntersectionObserver(handleIntersect, options);
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(ref.current);
 
     return () => observer.disconnect();
   }, [handleIntersect, ref, options]);
