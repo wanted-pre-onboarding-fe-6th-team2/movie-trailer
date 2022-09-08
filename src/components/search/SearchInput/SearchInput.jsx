@@ -8,7 +8,14 @@ import Loading from '@/components/common/Loading/Loading';
 
 const SearchInput = () => {
   const navigate = useNavigate();
-  const [searchKeyword, setSearchKeyword] = useState('');
+  const randomKeyword = () => {
+    const keywords = ['영화', '어벤져스', '스파이더맨', '기생충'];
+    const random = Math.floor(Math.random() * 4);
+
+    return keywords[random];
+  };
+
+  const [searchKeyword, setSearchKeyword] = useState(randomKeyword());
 
   const { searchResults, isLoading, isError, infiniteScrollTargetRef } = useMovieSearch({
     searchKeyword,
