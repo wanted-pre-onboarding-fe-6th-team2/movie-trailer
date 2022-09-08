@@ -29,10 +29,14 @@ hyoungqu23"> 이형민 </a> <br></td>
 
 > ## 데모
 
+[🌎 데모 페이지](https://wanted-movie-trailer.netlify.app)
+
 > ## 실행 방법
 
 ```
+yarn install
 
+yarn dev
 ```
 
 > ## 목차
@@ -165,9 +169,16 @@ hyoungqu23"> 이형민 </a> <br></td>
 
 #### 공통/API Response 데이터 캐쉬
 
-- API Response 데이터 캐쉬 (라이브러리 사용)
+- API Response 데이터 캐쉬 (SWR 라이브러리 사용)
 
 **해결방법**
+
+- http request는 axios라이브러리를 사용
+- api의 base한 로직은 BaseApiService class로 추상화
+- 추상화한 BaseApiService를 기반으로 Movie, SearchApiService class 정의
+- 정의한 class를 인스턴스를 바로 생성하여 export
+- api 인스턴스를 기반으로 SWR을 이용해 custom hook 생성
+- 실제 api를 요청하는 로직에서는 custom hook을 호출만 하면 되는 패턴으로 구현
 
 #### movies / 리스트 페이지
 
