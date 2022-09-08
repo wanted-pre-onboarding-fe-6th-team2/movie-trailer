@@ -16,12 +16,12 @@ hyoungqu23"> 이형민 </a> <br></td>
         <td height="50px" align="center"> <a href="https://github.com/hasunghwa"> 하성화 </a> <br></td>
     </tr>
 <tr>
-        <td align="center">홈페이지 구현</td>
+        <td align="center">공통 컴포넌트 구현</td>
         <td align="center">API 로직 및 서버 상태 관리</td>
         <td align="center">API 카테고리 별 리스트 페이지</td>
         <td align="center">영화 상세 페이지</td>
         <td align="center">영화 검색 페이지</td>
-        <td align="center">공통 컴포넌트 구현</td>
+        <td align="center">홈페이지 구현</td>
         <td align="center">API 카테고리 별 리스트 페이지</td>
         <td align="center">공통 컴포넌트 구현</td>
     </tr>
