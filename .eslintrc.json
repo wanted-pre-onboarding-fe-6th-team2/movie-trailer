@@ -1,6 +1,9 @@
 {
   "extends": ["airbnb", "airbnb/hooks", "plugin:import/recommended", "prettier"],
   "plugins": ["import", "react-hooks", "prettier", "prefer-arrow"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
   "rules": {
     "prefer-arrow/prefer-arrow-functions": [
       "error",
@@ -33,7 +36,8 @@
     "no-nested-ternary": "off",
     "react/no-array-index-key": "off",
     "react/react-in-jsx-scope": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "react/prop-types": "off"
   },
   "env": {
     "browser": true,
