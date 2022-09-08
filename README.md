@@ -88,42 +88,106 @@ yarn dev
 ├─assets
 │  │  react.svg
 │  │
-│  └─images
-│          facebook.png
-│          ic-up.png
-│          instagram.png
-│          logo.png
-│          no-image.jpg
-│          twitter.png
+│  ├─icon
+│  │      index.js
+│  │      star.png
+│  │
+│  ├─images
+│  │      facebook.png
+│  │      ic-up.png
+│  │      instagram.png
+│  │      logo.png
+│  │      no-image.jpg
+│  │      twitter.png
+│  │
+│  └─svg
+│          searchIcon.svg
+│
 ├─components
 │  ├─common
 │  │  ├─Button
 │  │  │      CarouselButton.jsx
 │  │  │      CarouselButton.styled.js
+│  │  │
 │  │  ├─Footer
 │  │  │      Footer.jsx
 │  │  │      Footer.styled.js
+│  │  │
 │  │  ├─GlobalLayout
 │  │  │      GlobalLayout.jsx
 │  │  │      GlobalLayout.styled.js
+│  │  │
 │  │  ├─Header
 │  │  │      Header.jsx
 │  │  │      Header.styled.js
+│  │  │
 │  │  ├─Loading
 │  │  │      Loading.jsx
 │  │  │      Loading.styled.js
+│  │  │
 │  │  └─ScrollToTop
 │  │          ScrollToTop.jsx
 │  │          ScrollToTop.styled.js
-│  └─MovieListItem
-│          MovieListItem.jsx
-│          MovieListItem.styled.js
+│  │
+│  ├─home
+│  │  ├─Card
+│  │  │      Card.jsx
+│  │  │      Card.styled.js
+│  │  │
+│  │  └─Main
+│  │          Main.jsx
+│  │          Main.styled.js
+│  │
+│  ├─movieDetail
+│  │  ├─DetailContainer
+│  │  │      DetailContainer.jsx
+│  │  │      DetailContainer.styled.js
+│  │  │
+│  │  ├─MovieInfo
+│  │  │      MovieInfo.jsx
+│  │  │      MovieInfo.styled.js
+│  │  │
+│  │  ├─MovieOverview
+│  │  │      MovieOverview.jsx
+│  │  │      MovieOverview.styled.js
+│  │  │
+│  │  ├─MoviePoster
+│  │  │      MoviePoster.jsx
+│  │  │      MoviePoster.styled.js
+│  │  │
+│  │  ├─MovieTitle
+│  │  │      MovieTitle.jsx
+│  │  │      MovieTitle.styled.js
+│  │  │
+│  │  ├─MovieVideo
+│  │  │      MovieVideo.jsx
+│  │  │      MovieVideo.styled.js
+│  │  │
+│  │  └─ProcutionCompany
+│  │          ProductionCompany.jsx
+│  │          ProductionCompany.styled.js
+│  │
+│  ├─MovieListItem
+│  │      MovieListItem.jsx
+│  │      MovieListItem.styled.js
+│  │
+│  └─search
+│      ├─SearchInput
+│      │      SearchInput.jsx
+│      │      SearchInput.styled.js
+│      │
+│      └─SearchItem
+│              SearchItem.jsx
+│              SearchItem.styled.js
+│
 ├─constants
 │      colors.js
 │      route.js
 │      swr.js
+│
 ├─hooks
 │  │  useInfiniteScroll.js
+│  │
 │  └─api
 │          useMovieDetail.js
 │          useMovieSearch.js
@@ -132,24 +196,32 @@ yarn dev
 │          usePopularMovies.js
 │          useTopRatedMovies.js
 │          useUpcomingMovies.js
+│
 ├─pages
 │  ├─Home
 │  │      Home.jsx
+│  │
 │  ├─MovieDetail
 │  │      MovieDetail.jsx
+│  │
 │  ├─NowPlaying
 │  │      NowPlaying.jsx
 │  │      NowPlaying.styled.js
+│  │
 │  ├─Search
 │  │      Search.jsx
+│  │
 │  ├─TopRated
 │  │      TopRated.jsx
 │  │      TopRated.styled.js
+│  │
 │  └─Upcoming
 │          Upcoming.jsx
 │          Upcoming.styled.js
+│
 ├─styles
 │      reset.js
+│
 └─utils
         swr.js
 ```
