@@ -1,11 +1,12 @@
+/* eslint-disable camelcase */
 import * as Styled from '@/components/movieDetail/MovieInfo/MovieInfo.styled';
 import { star } from '@/assets/icon';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import MovieTitle from '../MovieTitle/MovieTitle';
 
 const MovieInfo = ({ movieDetail }) => {
-  const { releaseDate, genres, productionCountries, runtime, voteAverage } = movieDetail;
-  const movieVoteAverage = Math.round(voteAverage * 10) / 10;
+  const { release_date, genres, production_countries, runtime, vote_average } = movieDetail;
+  const movieVoteAverage = Math.round(vote_average * 10) / 10;
 
   return (
     <Styled.MovieInfoContainer>
@@ -14,7 +15,7 @@ const MovieInfo = ({ movieDetail }) => {
         <MovieTitle movieDetail={movieDetail} />
         <Styled.MovieInfoList>
           <Styled.ListTitle>개봉일</Styled.ListTitle>
-          <Styled.ListContent>{releaseDate}</Styled.ListContent>
+          <Styled.ListContent>{release_date}</Styled.ListContent>
         </Styled.MovieInfoList>
         <Styled.MovieInfoList>
           <Styled.ListTitle>장르</Styled.ListTitle>
@@ -23,7 +24,7 @@ const MovieInfo = ({ movieDetail }) => {
         <Styled.MovieInfoList>
           <Styled.ListTitle>국가</Styled.ListTitle>
           <Styled.ListContent>
-            {productionCountries.map(country => country.iso_3166_1).join(', ')}
+            {production_countries.map(country => country.iso_3166_1).join(', ')}
           </Styled.ListContent>
         </Styled.MovieInfoList>
         <Styled.MovieInfoList>
