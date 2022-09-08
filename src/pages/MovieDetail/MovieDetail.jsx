@@ -1,61 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import MovieInfo from '@/components/movieDetail/MovieInfo/MovieInfo';
 import MovieOverview from '@/components/movieDetail/MovieOverview/MovieOverview';
 import ProductionCompany from '@/components/movieDetail/ProcutionCompany/ProductionCompany';
-import movieApiService from '@/api/movieService';
 import MovieVideo from '@/components/movieDetail/MovieVideo/MovieVideo';
-
-const initailMovieDetail = {
-  title: '',
-  originalTitle: '',
-  releaseDate: '',
-  posterPath: '',
-  overview: '',
-  runtime: 0,
-  voteAverage: 0,
-  voteCount: 0,
-  genres: [],
-  productionCountries: [],
-  productionCompanies: [],
-  video: [],
-  tagline: '',
-};
+import useMovieDetail from '@/hooks/api/useMovieDetail';
+import Loading from '@/components/common/Loading/Loading';
 
 const MovieDetail = () => {
   const { movieId } = useParams();
-  const [movieDetail, setMovieDetail] = useState(initailMovieDetail);
 
-  useEffect(() => {
-    const getMovieDetail = async () => {
-      const movieDetailData = await movieApiService.getMovieDetail({ movieId });
-      const movieVideoData = await movieApiService.getMovieVideos({ movieId });
+  const { movie, isLoading, isError } = useMovieDetail({
+    movieId,
+  });
 
-      setMovieDetail({
-        title: movieDetailData.title,
-        originalTitle: movieDetailData.original_title,
-        releaseDate: movieDetailData.release_date,
-        posterPath: movieDetailData.poster_path,
-        overview: movieDetailData.overview,
-        tagline: movieDetailData.tagline,
-        runtime: movieDetailData.runtime,
-        voteAverage: movieDetailData.vote_average,
-        voteCount: movieDetailData.vote_count,
-        genres: movieDetailData.genres,
-        productionCompanies: movieDetailData.production_companies,
-        productionCountries: movieDetailData.production_countries,
-        video: movieVideoData?.results[0],
-      });
-    };
-    getMovieDetail();
-  }, [movieId]);
+  if (isError) return <div>failed to load...</div>;
+  if (isLoading) return <Loading />;
 
   return (
     <>
-      <MovieVideo movieDetail={movieDetail} />
-      <MovieInfo movieDetail={movieDetail} />
-      <MovieOverview movieDetail={movieDetail} />
-      <ProductionCompany movieDetail={movieDetail} />
+      <MovieVideo movieDetail={movie} />
+      <MovieInfo movieDetail={movie} />
+      <MovieOverview movieDetail={movie} />
+      <ProductionCompany movieDetail={movie} />
     </>
   );
 };

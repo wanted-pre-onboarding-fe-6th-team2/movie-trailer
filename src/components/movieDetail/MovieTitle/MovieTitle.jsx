@@ -1,13 +1,17 @@
 import * as Styled from '@/components/movieDetail/MovieTitle/MovieTitle.styled';
 
 const MovieTitle = ({ movieDetail }) => {
-  const { title, originalTitle, releaseDate } = movieDetail;
+  const movie = {
+    title: movieDetail.title,
+    originalTitle: movieDetail.original_title,
+    releaseDate: movieDetail.release_date,
+  };
 
   return (
     <Styled.TitleContainer>
-      <Styled.MovieName>{title}</Styled.MovieName>
+      <Styled.MovieName>{movie.title}</Styled.MovieName>
       <Styled.OriginalMovieName>
-        {originalTitle}, {releaseDate.slice(0, 4)}
+        {movie.originalTitle}, {movie.releaseDate.slice(0, 4)}
       </Styled.OriginalMovieName>
     </Styled.TitleContainer>
   );

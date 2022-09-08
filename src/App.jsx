@@ -18,7 +18,7 @@ const App = () => (
       <Route path={ROUTES.NOW_PLAYING} element={<NowPlaying />} />
       <Route path={ROUTES.UPCOMING} element={<Upcoming />} />
       <Route path={ROUTES.TOP_RATED} element={<TopRated />} />
-      <Route path={ROUTES.MOVIE_DETAIL} element={<MovieDetail />} />
+      <Route path={`${ROUTES.MOVIE_DETAIL}/:movieId`} element={<MovieDetail />} />
       <Route path={ROUTES.SEARCH} element={<Search />} />
     </Routes>
   </GlobalLayout>
