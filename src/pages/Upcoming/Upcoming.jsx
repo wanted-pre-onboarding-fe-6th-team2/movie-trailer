@@ -8,6 +8,7 @@ const Upcoming = () => {
 
   if (isError) return <Styled.StateContain>Failed to load</Styled.StateContain>;
   if (isLoading) return <Styled.StateContain>Loading...</Styled.StateContain>;
+
   const movieList = movies.map(({ results }) => results).flat();
 
   return (
@@ -28,7 +29,7 @@ const Upcoming = () => {
           ))}
         </Styled.MovieList>
       </Styled.MoviePage>
-      <div target={infiniteScrollTargetRef} />
+      <div ref={infiniteScrollTargetRef} />
     </>
   );
 };

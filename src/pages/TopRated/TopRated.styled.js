@@ -26,6 +26,7 @@ const MovieList = styled.div`
 
 const StateContain = styled.div`
   min-height: 100vh;
+  padding: 100px 0;
 `;
 
 export { MoviePage, MovieList, SubTitle, StateContain };
