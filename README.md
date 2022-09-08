@@ -73,26 +73,81 @@ hyoungqu23"> 이형민 </a> <br></td>
 > ## 폴더 구조
 
 ```
-├── components
-│ ├── myPage
-│ │ ├── OrderListForm
-│ │ │  ├── OrderListForm.jsx
-│ │ │  └── OrderListForm.styled.js
-│ ├── common
-│ │ ├── PageContainer
-│ │ │ ├── PageContainer.jsx
-│ │ │ └── PageContainer.styled.js
-│ │ ├── Header
-│ │ │ ├── Header.jsx
-│ │ │ └── Header.styled.js
-├── pages
-│ ├── Home
-│ │ └── Home.jsx
-| ├── Order
-│ │ ├── Order.jsx
-│ │ └── Order.styled.js
-├── styles
-│ └── reset.js
+│  App.jsx
+│  main.jsx
+│
+├─api
+│      core.js
+│      movieService.js
+│      searchService.js
+│
+├─assets
+│  │  react.svg
+│  │
+│  └─images
+│          facebook.png
+│          ic-up.png
+│          instagram.png
+│          logo.png
+│          no-image.jpg
+│          twitter.png
+├─components
+│  ├─common
+│  │  ├─Button
+│  │  │      CarouselButton.jsx
+│  │  │      CarouselButton.styled.js
+│  │  ├─Footer
+│  │  │      Footer.jsx
+│  │  │      Footer.styled.js
+│  │  ├─GlobalLayout
+│  │  │      GlobalLayout.jsx
+│  │  │      GlobalLayout.styled.js
+│  │  ├─Header
+│  │  │      Header.jsx
+│  │  │      Header.styled.js
+│  │  ├─Loading
+│  │  │      Loading.jsx
+│  │  │      Loading.styled.js
+│  │  └─ScrollToTop
+│  │          ScrollToTop.jsx
+│  │          ScrollToTop.styled.js
+│  └─MovieListItem
+│          MovieListItem.jsx
+│          MovieListItem.styled.js
+├─constants
+│      colors.js
+│      route.js
+│      swr.js
+├─hooks
+│  │  useInfiniteScroll.js
+│  └─api
+│          useMovieDetail.js
+│          useMovieSearch.js
+│          useMovieVideos.js
+│          useNowPlayingMovies.js
+│          usePopularMovies.js
+│          useTopRatedMovies.js
+│          useUpcomingMovies.js
+├─pages
+│  ├─Home
+│  │      Home.jsx
+│  ├─MovieDetail
+│  │      MovieDetail.jsx
+│  ├─NowPlaying
+│  │      NowPlaying.jsx
+│  │      NowPlaying.styled.js
+│  ├─Search
+│  │      Search.jsx
+│  ├─TopRated
+│  │      TopRated.jsx
+│  │      TopRated.styled.js
+│  └─Upcoming
+│          Upcoming.jsx
+│          Upcoming.styled.js
+├─styles
+│      reset.js
+└─utils
+        swr.js
 ```
 
 > ## 과제 요구사항 및 해결 방법
@@ -119,6 +174,9 @@ hyoungqu23"> 이형민 </a> <br></td>
 - 포스터 없는 경우, 대체 이미지 사용
 
 **해결방법**
+
+- api에서 제공하는 page단위를 이용하여 20개씩 노출하였습니다.
+- SWR과 axios를 활용하여 데이터를 노출하였고 이미지 여부에 따라 대체 이미지를 사용할 수 있도록 구현하였습니다.
 
 #### movie / 상세 페이지
 
