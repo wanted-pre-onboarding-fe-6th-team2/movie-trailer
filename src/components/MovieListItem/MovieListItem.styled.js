@@ -6,6 +6,7 @@ const MovieItem = styled.div`
   width: 25%;
   box-sizing: border-box;
   max-width: 500px;
+  height: 485px;
 `;
 
 const ImageWrapper = styled.div`
