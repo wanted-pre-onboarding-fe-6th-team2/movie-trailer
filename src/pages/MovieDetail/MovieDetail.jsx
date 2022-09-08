@@ -5,7 +5,6 @@ import MovieOverview from '@/components/movieDetail/MovieOverview/MovieOverview'
 import ProductionCompany from '@/components/movieDetail/ProcutionCompany/ProductionCompany';
 import movieApiService from '@/api/movieService';
 import MovieVideo from '@/components/movieDetail/MovieVideo/MovieVideo';
-import PageContainer from '@/components/common/PageContainer/PageContainer';
 
 const initailMovieDetail = {
   title: '',
@@ -52,12 +51,12 @@ const MovieDetail = () => {
   }, [movieId]);
 
   return (
-    <PageContainer>
+    <>
       <MovieVideo movieDetail={movieDetail} />
       <MovieInfo movieDetail={movieDetail} />
       <MovieOverview movieDetail={movieDetail} />
       <ProductionCompany movieDetail={movieDetail} />
-    </PageContainer>
+    </>
   );
 };
 
