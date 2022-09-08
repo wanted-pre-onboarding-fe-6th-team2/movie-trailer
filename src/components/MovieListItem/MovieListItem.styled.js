@@ -3,7 +3,7 @@ import { COLORS } from '@/constants/colors.js';
 
 const MovieItem = styled.div`
   padding: 0 10px 30px;
-  width: 50%;
+  width: 25%;
   box-sizing: border-box;
   max-width: 500px;
 `;
