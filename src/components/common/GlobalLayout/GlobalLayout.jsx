@@ -1,4 +1,4 @@
-import * as Styled from '@/components/common/PageContainer/PageContainer.styled';
+import * as Styled from '@/components/common/GlobalLayout/GlobalLayout.styled';
 import Footer from '@/components/common/Footer/Footer';
 import Header from '@/components/common/Header/Header';
 
