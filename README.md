@@ -16,12 +16,12 @@ hyoungqu23"> 이형민 </a> <br></td>
         <td height="50px" align="center"> <a href="https://github.com/hasunghwa"> 하성화 </a> <br></td>
     </tr>
 <tr>
-        <td align="center">홈페이지 구현</td>
+        <td align="center">공통 컴포넌트 구현</td>
         <td align="center">API 로직 및 서버 상태 관리</td>
         <td align="center">API 카테고리 별 리스트 페이지</td>
         <td align="center">영화 상세 페이지</td>
         <td align="center">영화 검색 페이지</td>
-        <td align="center">공통 컴포넌트 구현</td>
+        <td align="center">홈페이지 구현</td>
         <td align="center">API 카테고리 별 리스트 페이지</td>
         <td align="center">공통 컴포넌트 구현</td>
     </tr>
@@ -77,90 +77,55 @@ yarn dev
 > ## 폴더 구조
 
 ```
-│  App.jsx
-│  main.jsx
-│
 ├─api
-│      core.js
-│      movieService.js
-│      searchService.js
-│
 ├─assets
-│  │  react.svg
-│  │
-│  └─images
-│          facebook.png
-│          ic-up.png
-│          instagram.png
-│          logo.png
-│          no-image.jpg
-│          twitter.png
+│  ├─icon
+│  ├─images
+│  └─svg
 ├─components
 │  ├─common
 │  │  ├─Button
-│  │  │      CarouselButton.jsx
-│  │  │      CarouselButton.styled.js
 │  │  ├─Footer
-│  │  │      Footer.jsx
-│  │  │      Footer.styled.js
 │  │  ├─GlobalLayout
-│  │  │      GlobalLayout.jsx
-│  │  │      GlobalLayout.styled.js
 │  │  ├─Header
-│  │  │      Header.jsx
-│  │  │      Header.styled.js
 │  │  ├─Loading
-│  │  │      Loading.jsx
-│  │  │      Loading.styled.js
 │  │  └─ScrollToTop
-│  │          ScrollToTop.jsx
-│  │          ScrollToTop.styled.js
-│  └─MovieListItem
-│          MovieListItem.jsx
-│          MovieListItem.styled.js
+│  ├─home
+│  │  ├─Card
+│  │  └─Main
+│  ├─movieDetail
+│  │  ├─DetailContainer
+│  │  ├─MovieInfo
+│  │  ├─MovieOverview
+│  │  ├─MoviePoster
+│  │  ├─MovieTitle
+│  │  ├─MovieVideo
+│  │  └─ProcutionCompany
+│  ├─MovieListItem
+│  └─search
+│      ├─SearchInput
+│      └─SearchItem
 ├─constants
-│      colors.js
-│      route.js
-│      swr.js
 ├─hooks
-│  │  useInfiniteScroll.js
 │  └─api
-│          useMovieDetail.js
-│          useMovieSearch.js
-│          useMovieVideos.js
-│          useNowPlayingMovies.js
-│          usePopularMovies.js
-│          useTopRatedMovies.js
-│          useUpcomingMovies.js
 ├─pages
 │  ├─Home
-│  │      Home.jsx
 │  ├─MovieDetail
-│  │      MovieDetail.jsx
 │  ├─NowPlaying
-│  │      NowPlaying.jsx
-│  │      NowPlaying.styled.js
 │  ├─Search
-│  │      Search.jsx
 │  ├─TopRated
-│  │      TopRated.jsx
-│  │      TopRated.styled.js
 │  └─Upcoming
-│          Upcoming.jsx
-│          Upcoming.styled.js
 ├─styles
-│      reset.js
 └─utils
-        swr.js
 ```
 
 > ## 과제 요구사항 및 해결 방법
 
 #### 공통/Loading, Infinite Scroll
 
-- Loading 상태 표기
-- Infinite scroll
-- 스크롤 감지하여 ScrollUp button 표시되도록, 누를 시 최상단으로 스크롤 이동
+- [x] Loading 상태 표기
+- [x] Infinite scroll
+- [x] 스크롤 감지하여 ScrollUp button 표시되도록, 누를 시 최상단으로 스크롤 이동
 
 **해결방법**
 
@@ -169,7 +134,7 @@ yarn dev
 
 #### 공통/API Response 데이터 캐쉬
 
-- API Response 데이터 캐쉬 (SWR 라이브러리 사용)
+- [x] API Response 데이터 캐쉬 (SWR 라이브러리 사용)
 
 **해결방법**
 
@@ -179,6 +144,16 @@ yarn dev
 - 정의한 class를 인스턴스를 바로 생성하여 export
 - api 인스턴스를 기반으로 SWR을 이용해 custom hook 생성
 - 실제 api를 요청하는 로직에서는 custom hook을 호출만 하면 되는 패턴으로 구현
+
+#### movies / 홈페이지
+
+- 한번에 가져올 데이터 최대 20
+- 제목, 포스터 표시
+
+**해결방법**
+
+- api에서 제공하는 page단위를 이용하여 20개씩 노출하였습니다.
+- SWR과 axios를 활용하여 데이터를 노출하였고 이미지 여부에 따라 대체 이미지를 사용할 수 있도록 구현하였습니다.
 
 #### movies / 리스트 페이지
 
@@ -193,18 +168,21 @@ yarn dev
 
 #### movie / 상세 페이지
 
-- 비디오 있는 경우, 페이지 진입 시 자동으로 비디오 플레이
-- 제목, 포스터, 별점, 제작 연도, 장르 데이터 활용해서 UI 표기
-- 그 외의 데이터 추가 활용 여부는 자유
+- [x] 비디오 있는 경우, 페이지 진입 시 자동으로 비디오 플레이
+- [x] 제목, 포스터, 별점, 제작 연도, 장르 데이터 활용해서 UI 표기
+- [x] 그 외의 데이터 추가 활용 여부는 자유
 
 **해결방법**
 
 #### search
 
-- 제목 기준으로 검색할 수 있도록 api를 활용해 최대 20개씩 검색된 데이터를 노출했습니다.
-- 이미지가 존재하지 않는 경우 대체 이미지가 사용되도록 구현했습니다.
+- [x] 제목, 포스터, 별점
+- [x] 포스터 없는 경우, 대체 이미지 사용
 
 **해결방법**
+
+- 제목 기준으로 검색할 수 있도록 api를 활용해 최대 20개씩 검색된 데이터를 노출했습니다.
+- 이미지가 존재하지 않는 경우 대체 이미지가 사용되도록 구현했습니다.
 
 > ## 기술 스택
 
