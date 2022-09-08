@@ -4,14 +4,14 @@
 
 <table>
     <tr>
-        <td height="50px" align="center"> <a href="https://github.com/Taak-e"> 김주탁 </a> <br></td>
+        <td height="50px" align="center"> <a href="https://github.com/nknkcho"> 조남경(팀장) </a> <br></td>
         <td height="50px" align="center"> <a href="https://github.com/HaJunRyu"> 류하준 </a> <br></td>
         <td height="50px" align="center"> <a href="https://github.com/
 wldbszpflrxj"> 변지윤 </a> <br></td>
         <td height="50px" align="center"> <a href="https://github.com/yeongjuyun"> 윤영주 </a> <br></td>
         <td height="50px" align="center"> <a href="https://github.com/
 hyoungqu23"> 이형민 </a> <br></td>
-        <td height="50px" align="center"> <a href="https://github.com/nknkcho"> 조남경(팀장) </a> <br></td>
+        <td height="50px" align="center"> <a href="https://github.com/Taak-e"> 김주탁 </a> <br></td>
         <td height="50px" align="center"> <a href="https://github.com/joohe71"> 강주희 </a> <br></td>
         <td height="50px" align="center"> <a href="https://github.com/hasunghwa"> 하성화 </a> <br></td>
     </tr>
