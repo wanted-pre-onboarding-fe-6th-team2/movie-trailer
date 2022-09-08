@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ScrollToTopBtn, UpperImg } from '@/components/common/ScrollToTop/ScrollToTop.styled';
+import { ScrollToTopBtn } from '@/components/common/ScrollToTop/ScrollToTop.styled';
 import imgUp from '@/assets/images/ic-up.png';
 
 const ScrollToTop = () => {
@@ -43,7 +43,7 @@ const ScrollToTop = () => {
 
   return (
     <ScrollToTopBtn onClick={scrollToTop} isDisplay={visibleToTopBtn}>
-      <UpperImg src={imgUp} />
+      <img alt="upImg" src={imgUp} />
     </ScrollToTopBtn>
   );
 };

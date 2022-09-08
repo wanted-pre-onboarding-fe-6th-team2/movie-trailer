@@ -14,6 +14,4 @@ const ScrollToTopBtn = styled.div`
   cursor: pointer;
 `;
 
-const UpperImg = styled.img``;
-
-export { ScrollToTopBtn, UpperImg };
+export { ScrollToTopBtn };
