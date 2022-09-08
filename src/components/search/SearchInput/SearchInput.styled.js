@@ -2,6 +2,11 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors.js';
 
+const SearchSection = styled.section`
+  max-width: 1600px;
+  margin: 0 auto;
+`;
+
 const SearchInputSection = styled.section`
   position: relative;
   width: 80%;
@@ -47,4 +52,38 @@ const SearchButton = styled(Link)`
   background-color: transparent;
 `;
 
-export { SearchInputSection, SearchInputForm, SearchInput, SearchButton };
+const SearchResultSection = styled.section`
+  width: 100%;
+  min-height: 150vh;
+  padding: 0.5em;
+  position: relative;
+
+  & > h2 {
+    text-align: center;
+    grid-column: 1 / 5;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+
+  & > div {
+    width: fit-content;
+  }
+
+  & > div:last-child {
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -2.5em;
+  }
+`;
+
+export {
+  SearchSection,
+  SearchInputSection,
+  SearchInputForm,
+  SearchInput,
+  SearchButton,
+  SearchResultSection,
+};

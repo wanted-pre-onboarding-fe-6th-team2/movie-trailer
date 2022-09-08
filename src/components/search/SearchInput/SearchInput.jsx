@@ -4,11 +4,15 @@ import searchIcon from '@/assets/svg/searchIcon.svg';
 import * as Styled from '@/components/search/SearchInput/SearchInput.styled';
 import useMovieSearch from '@/hooks/api/useMovieSearch';
 import SearchItem from '@/components/search/SearchItem/SearchItem';
+import Loading from '@/components/common/Loading/Loading';
 
 const SearchInput = () => {
   const navigate = useNavigate();
   const [searchKeyword, setSearchKeyword] = useState('');
-  const { searchResults } = useMovieSearch({ searchKeyword, page: 1 });
+
+  const { searchResults, isLoading, isError, infiniteScrollTargetRef } = useMovieSearch({
+    searchKeyword,
+  });
 
   const handleSearchKeywordInputChange = async ({ target }) => {
     const { value } = target;
@@ -22,8 +26,14 @@ const SearchInput = () => {
     }
   };
 
+  const searchedMovieList = searchKeyword
+    ? searchResults?.map(({ results }) => results).flat()
+    : [];
+
+  if (isLoading) return <Loading />;
+
   return (
-    <>
+    <Styled.SearchSection>
       <Styled.SearchInputSection>
         <Styled.SearchInputForm>
           <Styled.SearchInput
@@ -34,15 +44,24 @@ const SearchInput = () => {
             onChange={handleSearchKeywordInputChange}
             onKeyPress={handleEnterPress}
           />
-          {/* <Styled.SearchButton> */}
           <Styled.SearchButton to={`?query=${searchKeyword}`}>
             <img src={searchIcon} alt="검색" />
           </Styled.SearchButton>
-          {/* </Styled.SearchButton> */}
         </Styled.SearchInputForm>
       </Styled.SearchInputSection>
-      <SearchItem movies={searchResults ? searchResults.results : []} />
-    </>
+      <Styled.SearchResultSection>
+        {isError && <h2>검색된 결과가 없습니다.</h2>}
+        {searchedMovieList?.map(movie => (
+          <SearchItem
+            key={movie.id + movie.title}
+            movie={movie}
+            isLoading={isLoading}
+            target={infiniteScrollTargetRef}
+          />
+        ))}
+        <div ref={infiniteScrollTargetRef} />
+      </Styled.SearchResultSection>
+    </Styled.SearchSection>
   );
 };
 

@@ -1,15 +1,19 @@
 import React from 'react';
+import Loading from '@/components/common/Loading/Loading';
+import MovieListItem from '@/components/MovieListItem/MovieListItem';
 
-const SearchItem = ({ movies }) => {
+const SearchItem = ({ movie, isLoading }) => {
+  if (isLoading) return <Loading />;
+
   return (
-    <div>
-      {movies.map(movie => (
-        <div key={movie.id}>
-          <h1>{movie.id}</h1>
-          <h1>{movie.title}</h1>
-        </div>
-      ))}
-    </div>
+    <MovieListItem
+      id={movie.id}
+      imagePath={movie.poster_path}
+      overview={movie.overview}
+      title={movie.title}
+      voteAverage={movie.vote_average}
+      releaseDate={movie.release_date}
+    />
   );
 };
 
