@@ -157,9 +157,11 @@ hyoungqu23"> 이형민 </a> <br></td>
 - Loading 상태 표기
 - Infinite scroll
 - 스크롤 감지하여 ScrollUp button 표시되도록, 누를 시 최상단으로 스크롤 이동
-- API Response 데이터 캐쉬 (라이브러리 사용)
 
 **해결방법**
+
+- 스크롤 이벤트로 무한 스크롤을 구현하면 리플로우에 의해 렌더링 성능이 저하되기 떄문에 이를 막기위해 IntersectionObserver를 활용하여 무한스크롤을 구현하였다.
+- 스크롤 이벤트에서 이벤트가 한번에발생하는 것을 막기위해 throttle을 적용하여 ScrollUp button을 구현하였다.
 
 #### 공통/API Response 데이터 캐쉬
 
