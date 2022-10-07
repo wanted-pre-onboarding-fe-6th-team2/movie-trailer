@@ -7,8 +7,10 @@ import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 const getKey = generateSwrGetKeyFunction(USE_SWR_KEYS.MOVIE_SEARCH);
 
 const useMovieSearch = ({ searchKeyword, language } = {}) => {
-  const { data, error, setSize } = useSWRInfinite(getKey, (_, page) =>
-    searchApiService.getMovieSearchResults({ searchKeyword, language, page })
+  const { data, error, setSize } = useSWRInfinite(
+    getKey,
+    (_, page) =>
+      searchKeyword && searchApiService.getMovieSearchResults({ searchKeyword, language, page })
   );
 
   const handleFetchMoreSearchResults = () => {

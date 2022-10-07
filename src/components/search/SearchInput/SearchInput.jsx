@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import searchIcon from '@/assets/svg/searchIcon.svg';
 import * as Styled from '@/components/search/SearchInput/SearchInput.styled';
 import useMovieSearch from '@/hooks/api/useMovieSearch';
@@ -7,7 +6,6 @@ import SearchItem from '@/components/search/SearchItem/SearchItem';
 import Loading from '@/components/common/Loading/Loading';
 
 const SearchInput = () => {
-  const navigate = useNavigate();
   const randomKeyword = () => {
     const keywords = ['영화', '어벤져스', '스파이더맨', '기생충'];
     const random = Math.floor(Math.random() * 4);
@@ -21,16 +19,13 @@ const SearchInput = () => {
     searchKeyword,
   });
 
-  const handleSearchKeywordInputChange = async ({ target }) => {
+  const handleSearchKeywordInputChange = ({ target }) => {
     const { value } = target;
     setSearchKeyword(value);
   };
 
-  const handleEnterPress = e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      navigate(`?query=${searchKeyword}`);
-    }
+  const handleSearch = e => {
+    e.preventDefault();
   };
 
   const searchedMovieList = searchKeyword
@@ -42,16 +37,15 @@ const SearchInput = () => {
   return (
     <Styled.SearchSection>
       <Styled.SearchInputSection>
-        <Styled.SearchInputForm>
+        <Styled.SearchInputForm onSubmit={handleSearch}>
           <Styled.SearchInput
             type="text"
             placeholder="검색어를 입력하세요."
             autoComplete="false"
             value={searchKeyword}
             onChange={handleSearchKeywordInputChange}
-            onKeyPress={handleEnterPress}
           />
-          <Styled.SearchButton to={`?query=${searchKeyword}`}>
+          <Styled.SearchButton>
             <img src={searchIcon} alt="검색" />
           </Styled.SearchButton>
         </Styled.SearchInputForm>

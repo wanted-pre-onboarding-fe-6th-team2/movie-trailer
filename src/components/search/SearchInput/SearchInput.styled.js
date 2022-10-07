@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 import { COLORS } from '@/constants/colors.js';
 
 const SearchSection = styled.section`
@@ -39,7 +38,7 @@ const SearchInput = styled.input`
   }
 `;
 
-const SearchButton = styled(Link)`
+const SearchButton = styled.button`
   width: 1em;
   height: 1em;
 
